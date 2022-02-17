@@ -1,0 +1,100 @@
+{
+  "root": true,
+  "extends": [
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:jest/recommended",
+    "plugin:yaml/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["import", "react", "jest"],
+  "settings": {
+    "import/ignore": ["node_modules", ".png$", ".jpg$"],
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "globals": {
+    "window": true,
+    "document": true
+  },
+  "rules": {
+    "react/prop-types": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": true
+      }
+    ],
+    "react/no-array-index-key": "error",
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "tabWidth": 2,
+        "comments": 160,
+        "ignoreStrings": true
+      }
+    ],
+    "jest/expect-expect": [
+      "error",
+      {
+        "assertFunctionNames": ["expect", "expectSaga"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["./**/*.{ts,tsx}"],
+      "extends": [
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "plugin:jest/recommended",
+        "plugin:yaml/recommended",
+        "airbnb-typescript",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["react", "@typescript-eslint", "jest"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "error",
+        "react/prop-types": "off",
+        "import/extensions": "off",
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true,
+            "optionalDependencies": true
+          }
+        ],
+        "react/no-array-index-key": "error",
+        "max-len": [
+          "error",
+          {
+            "code": 120,
+            "tabWidth": 2,
+            "comments": 160,
+            "ignoreStrings": true
+          }
+        ],
+        "react/button-has-type": "error"
+      }
+    },
+  ]
+}
