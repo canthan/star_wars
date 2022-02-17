@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { Details } from './Details';
-import { List } from './List';
+import { Details } from './components/Details';
+import { List } from './components/List';
 
 import './App.scss';
 
