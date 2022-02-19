@@ -16,15 +16,15 @@ export const Details = () => {
 
   useEffect(() => {
     if (id && !personFromState && !person)
-      getPerson(Number(id)).then((result) => {
-        setPerson(result.data);
+      getPerson(Number(id)).then((response) => {
+        setPerson(response.data);
       });
   }, [id, personFromState, person]);
 
   useEffect(() => {
     if (!planet && person) {
-      getData(person.homeworld).then((result: AxiosResponse<People>) => {
-        setPlanet(result.data);
+      getData(person.homeworld).then((response: AxiosResponse<People>) => {
+        setPlanet(response.data);
       });
     }
   }, [person, planet]);

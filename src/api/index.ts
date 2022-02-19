@@ -10,6 +10,6 @@ export const getPeople = (
   axios.get<PeopleResponse>(`${API}${PEOPLE}?page=${page}`);
 
 export const getPerson = (id: number): Promise<AxiosResponse<People>> =>
-  axios.get<People>(`${API}${PEOPLE}}${id}`);
+  axios.get<People>(`${API}${PEOPLE}${id}`);
 
 export const getData = (url: string): Promise<AxiosResponse> => axios.get(url);
