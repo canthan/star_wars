@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { getData, getPeople } from '../../api';
 import { People, Planet } from '../../types';
+import { getIdFromUrl } from '../../utils/utils';
 
 import './styles.scss';
 
@@ -35,8 +36,7 @@ export const List = () => {
   }, [people]);
 
   const handleClick = (url: string) => {
-    const urlParts = url.split('/');
-    const personId = urlParts[urlParts.length - 2];
+    const personId = getIdFromUrl(url);
 
     navigate(`/details/${personId}`, {
       state: people.find((person) => person.url === url),
