@@ -17,7 +17,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["import", "react", "jest"],
+  "plugins": ["import", "react", "jest", "react-hooks"],
   "settings": {
     "import/ignore": ["node_modules", ".png$", ".jpg$"],
     "react": {
@@ -33,6 +33,8 @@
   },
   "rules": {
     "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -95,6 +97,6 @@
         ],
         "react/button-has-type": "error"
       }
-    },
+    }
   ]
 }

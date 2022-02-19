@@ -1,0 +1,24 @@
+.list__wrapper {
+  margin: 20px;
+}
+.list__title {
+  margin-left: 50px;
+}
+
+.list__item {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 10px;
+}
+
+.list__item__title {
+  margin: 0;
+}
+
+.list__item__button {
+  padding: 0;
+  cursor: pointer;
+}
