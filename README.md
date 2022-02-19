@@ -1,3 +1,5 @@
+TLDR: To run the project locally run "npm i" to install dependencies and then "npm start". New tab should open in the default browser (localhost:3000 by default)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
