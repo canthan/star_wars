@@ -4,6 +4,7 @@ import { AxiosResponse } from 'axios';
 
 import { getData, getPerson } from '../../api';
 import { Film, People, Planet } from '../../types';
+import { getIdFromUrl } from '../../utils/utils';
 
 import './details.scss';
 
@@ -33,7 +34,11 @@ export const Details = () => {
     if (!films.length && person?.films?.length) {
       person.films.forEach((url) => {
         getData(url).then((response: AxiosResponse<Film>) => {
-          setFilms((prevFilms) => [...prevFilms, response.data]);
+          setFilms((prevFilms) =>
+            [...prevFilms, response.data].sort((a, b) =>
+              getIdFromUrl(a.url) > getIdFromUrl(b.url) ? 1 : -1,
+            ),
+          );
         });
       });
     }
